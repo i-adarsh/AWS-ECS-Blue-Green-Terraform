@@ -1,0 +1,21 @@
+[
+    {
+      "name": "grad-ready",
+      "image": "nginx:latest",
+      "cpu": 10,
+      "memory": 4096,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": { 
+          "awslogs-group" : "/ecs/frontend-container",
+          "awslogs-region": "us-east-1"
+        }
+      }
+    }
+]
